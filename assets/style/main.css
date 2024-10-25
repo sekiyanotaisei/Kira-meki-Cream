@@ -127,14 +127,12 @@ h1{
     font-size: 38px;
     font-weight: 700;
     font-family: 'EB Garamond', serif;
-    letter-spacing: 0.04em;
 }
 
 .product__image--text-sub{
     font-size: 24px;
     font-weight: 600;
     font-family: 'Noto Serif JP', serif;
-    letter-spacing: -0.17em;
     margin-top: 0.5vw;
 }
 
@@ -142,7 +140,6 @@ h1{
     font-size: 15px;
     font-weight: 400;
     font-family: 'Noto Serif JP', serif;
-    letter-spacing: -0.28em;
     line-height: 2.1em;
     margin-top: 1vw;
 }
@@ -158,6 +155,20 @@ h1{
 
     .product__image--text-content{
         font-size: 11px;
+    }
+}
+
+@media(max-width: 900px){
+    .product__image--text-main{
+        font-size: 27px;
+    }
+
+    .product__image--text-sub{
+        font-size: 17px;
+    }
+
+    .product__image--text-content{
+        font-size: 10px;
     }
 }
 
@@ -211,7 +222,11 @@ h2{
     letter-spacing: 0.07em;
 }
 
-.slide__box--sub-text{
+.slide__box--main-title{
+    display: block;
+}
+
+.slide__box--sub-title{
     text-align: center;
     color: #000;
     font-family: 'Noto Serif JP', serif;
@@ -256,7 +271,6 @@ h2{
     font-size: 15px;
     font-weight: 400;
     font-family: 'Noto Serif JP', serif;
-    letter-spacing: -0.2em;
     line-height: 1.8em;
 }
 
@@ -390,7 +404,7 @@ ul.slick-dots{
         margin-bottom: 5px;
     }
 
-    .slide__box--sub-text{
+    .slide__box--sub-title{
         font-size: 16px;
     }
 
@@ -444,6 +458,12 @@ h2{
     margin-bottom: 10px;
 }
 
+
+.QA__main{
+    display: block;
+    padding-top: 40px;
+}
+
 .QA__sub{
     color: #000;
     font-size: 20px;
@@ -462,7 +482,6 @@ h2{
 .QA__accordion--header {
     color: #444;
     font-size: 15px;
-    letter-spacing: -0.2em;
     font-weight: 500;
     font-family: 'Noto Serif JP', serif;
     padding: 25px 0;
@@ -478,7 +497,6 @@ h2{
 .QA__accordion--content {
     color: #000;
     font-size: 15px;
-    letter-spacing: -0.2em;
     line-height: 2em;
     font-weight: 500;
     font-family: 'Noto Serif JP', serif;
@@ -500,10 +518,16 @@ h2{
 }
 
 .QA__accordion--header::after {
-    content: '▼';
+    content: '';
+    background-image: url('/assets/image/caret_up_fill.png');
     position: absolute;
     right: 24px;
+    top:33px;
     transition: transform 0.5s ease-in-out;
+    width: 12px;
+    height: 7.74px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .QA__accordion[open] .QA__accordion--header::after {
@@ -520,8 +544,11 @@ h2{
         height: 135px;
     }
 
-    .QA__flex h2{
+    .QA__main{
         font-size: 30px;
+        display: block;
+        padding-top: 32px;
+        margin-bottom: -20px;       /* ここの箇所を要調整（PC表示も含む）*/
     }
 
     .QA__sub{
@@ -547,6 +574,12 @@ h2{
 
     .QA__accordion {
         width: calc(100vw - 32px);
+    }
+
+    .QA__accordion--header::after {
+        right: 15px;
+        width: 10px;
+        height: 6.45px;
     }
 }
 
@@ -703,7 +736,6 @@ footer{
     font-family: 'Noto Serif JP', serif;
     margin: 0;
     margin-bottom: 5px;
-    letter-spacing: -0.3vw;
 }
 
 .buy-button__product-price{
@@ -736,8 +768,8 @@ footer{
 
 .buy-button__to-shop{
     background-color: #46C4DB;
-    letter-spacing: -4px;
     text-decoration-line: none;
+    position: relative;
 }
 
 .buy-button__buy{
